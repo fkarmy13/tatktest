@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+   }
+
+body {
+    height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #42AAFF;
+  align-content: center;
+}
+
+.card{
+    background: #bfd9ebab;
+    border-radius: 15px;
+    padding: 2%;
+    width: 80%;
+    height: 80%;
+    margin-left: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+  }
+  
+  /*Карточка*/
+.card_list{
+    background: #bfd9ebab;
+    border-radius: 15px;
+    padding: 2%;
+    width: 50%;
+    height: 80%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+    /*Карточки для отображения данных*/
+    .cards {
+        border-radius: 15px;
+        padding: 1%;
+        width: 95%;
+        height: auto;
+      }
+      .card_1 {
+        border-radius: 15px;
+        background: #7ba0bbab;
+        margin-left: 1%;
+        width: 95%;
+        height: auto;
+      }
+      .menu {
+        display: flex;
+        position: fixed;
+        flex-direction: column; /* размещаем элементы к колонку */
+        width: 110px;
+        min-height: 100vh; /* на всю высоту экрана */
+         /* чтобы меню было фиксированным */
+        top: 0; /* прижимаем к верхнему */
+        left: 0; /* .. и нижнему краю */
+        background: #406d82;
+        box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2); /* задаем тень, чтобы отделить от фона */
+        font-weight: 600;
+      }
+      /*Убираем тип списка*/
+      
+      .menu li {
+        display: inline-block;
+        
+        
+      }
+      /* Позиционирование элементов в меню */
+      .menu__link {
+        top:70px;
+      }
+    /*стилизыция логотипа*/
+    .icon {
+      width: 100px;
+      height: 80px;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+      }
+    
+    /* Свойства для элементов меню */
+    .link {
+      position: relative; /* чтобы задать потом псевдоэлемент */
+      display: flex; /* чтобы элемент тянулся на всю ширину */
+      align-items: center; /* по центру текст */
+      height: 25px; /* высота элемента 45px */
+      text-decoration: none;
+      margin: 3%;
+    }
+    
+    
+    
+    /* Свойства текста внутри ссылки */
+    .link > span {
+      font-family: "Karla", sans-serif;
+      font-size: 15px;
+      color: #fff;
+      
+    }
+    
+    /* При наведении на ссылку - полупрозрачный белый фон */
+    .link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Выводим оранжевую линию слева */
+    .link:hover:before {
+      display: flex;
+    }
+        
+    /*Кнопка*/
+ .glow-on-hover {
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    margin: 0.5em 0 0.5em 0;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #474a6e, #394a7a, #455eaf, #4c45ad, #55509c, #334391, #403f94, #8856b8, #957bbe);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+
+select {
+    width: 100%;
+    height: 35px;
+    padding: 10px;
+    margin-left: 2%;
+    border-radius:4px;
+    box-shadow: 2px 2px 8px #999;
+    background: #d5dbf7d0;
+    border: none;
+    outline: none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    }
+    label {
+    position: relative;
+    }
+    label:after {
+    content:'<>';
+    font: 11px "Consolas", monospace;
+    color: #666;
+    background: #d5dbf7d0;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 8px; 
+    top:2px;
+    padding: 0 0 2px;
+    border-bottom: 1px solid  #d5dbf7d0;
+    position: absolute;
+    pointer-events: none;
+    }
+    label:before {
+    content: '';
+    right: 6px; 
+    top:0px;
+    width: 20px; 
+    height: 20px;
+    background: #d5dbf7d0;
+    
+    position: absolute;
+    pointer-events: none;
+    display: block;
+    }
+
+    /*Ссыдки*/
+.link_a{
+    text-align:center;
+}
+.link {
+    /* RESET */
+    text-decoration: none;
+    line-height: 1;
+    
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    padding: 5px 5px;
+    overflow: hidden;
+    color: #000;
+    vertical-align: bottom;
+    transition: color .3s ease-out;
+ }
+ 
+ .link::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transform: translateY(calc(100% - 2px));
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(60deg, #a8cfee 0%, #87a4c4 100%);
+    transition: transform .25s ease-out;
+ }
+ 
+ .link:hover { 
+    color: #000; 
+ }
+ .link:hover::before {
+    opacity: 0.5;
+    background-image: linear-gradient(60deg, #4c5053 0%, #2c4c6e 100%);
+ }
+
+ .back {
+	a {
+		color: rgba(0,0,0,0.4);
+		font-weight: 700;
+		text-shadow: none;
+		margin: 0 20px;
+	}
+}
+
+ h2{
+    text-align: justify;
+    color: #343434;
+    font-weight: bold;
+    font-size: 23px;
+    line-height: 30px;
+    
+    margin: 2%;
+}
+p{
+    text-align: justify;
+    color: #343434;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 35px;
+    padding: 2%;
+    margin: 2%;
+}
+/*Стилизация скроллбара*/
+/*Размер скроллбара*/
+::-webkit-scrollbar {
+    width: 4px;
+  }
+  /*Стилизация трека*/
+  ::-webkit-scrollbar-track {
+    margin: 8px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 2px rgba(202, 6, 6, 0.2) inset;
+  }
+  
+  /*Стилизация ползунка*/
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom right, #152032, #245063);
+    border-radius: 8px;
+  }
+  table {
+    width: 100%; /* Ширина таблицы */
+    border-collapse: collapse; /* Убираем двойные линии */
+    border-bottom: 2px solid #333; /* Линия снизу таблицы */
+   }
+   td { 
+    text-align: center; /* Выравнивание по центру */
+    border-bottom: 1px solid #333;
+    border-top: 1px solid #333;
+   }
+   td, th {
+    padding: 5px; /* Поля в ячейках */
+   }
+   .input_1 {
+    width: 50px;
+    background-color: #aed0f0;
+  }
+  .input {
+    width: 150px;
+    background-color: #aed0f0;
+  }
